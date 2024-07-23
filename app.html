@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EatWall</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#eathaelty"><i class="fas fa-apple-alt"></i> Eathaelty</a></li>
+                <li><a href="#exercise"><i class="fas fa-dumbbell"></i> Exercise</a></li>
+                <li><a href="#gift-voucher"><i class="fas fa-gift"></i> Gift Voucher</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to EatWall</h1>
+            <p>Your ultimate destination for healthy living.</p>
+            <a href="https://example.com" class="app-link" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Check out our Health App
+            </a>
+        </section>
+
+        <!-- Eathaelty Section -->
+        <section id="eathaelty">
+            <h2>Eathaelty</h2>
+            <p>Discover delicious and healthy recipes.</p>
+            
+            <!-- ฟังก์ชันการคำนวณแคลอรี่ -->
+            <div class="calculator">
+                <h3>คำนวณแคลอรี่</h3>
+                <input type="number" id="calories-input" placeholder="กรอกปริมาณอาหาร (กรัม)">
+                <button onclick="calculateCalories()">คำนวณ</button>
+                <p id="calories-result"></p>
+            </div>
+
+            <!-- ฟังก์ชันการคำนวณสารอาหาร -->
+            <div class="calculator">
+                <h3>คำนวณสารอาหาร</h3>
+                <input type="number" id="protein-input" placeholder="กรอกโปรตีน (กรัม)">
+                <input type="number" id="carbs-input" placeholder="กรอกคาร์โบไฮเดรต (กรัม)">
+                <input type="number" id="fat-input" placeholder="กรอกไขมัน (กรัม)">
+                <button onclick="calculateNutrients()">คำนวณ</button>
+                <p id="nutrients-result"></p>
+            </div>
+
+            <!-- แผนอาหาร -->
+            <div class="meal-plan">
+                <h3>แผนอาหาร</h3>
+                <p>เลือกแผนอาหารตามเป้าหมายสุขภาพของคุณ</p>
+                <ul>
+                    <li><a href="#">แผนลดน้ำหนัก</a></li>
+                    <li><a href="#">แผนเพิ่มกล้ามเนื้อ</a></li>
+                    <li><a href="#">แผนรักษาสุขภาพ</a></li>
+                </ul>
+            </div>
+
+            <!-- เมนูแนะนำ -->
+            <div class="recommended-menu">
+                <h3>เมนูแนะนำ</h3>
+                <ul>
+                    <li>ตัวอย่าง สลัดผักโขม</li>
+                    <li>อกไก่</li>
+                    <li>สมูทตี้ผลไม้</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Exercise Section -->
+        <section id="exercise">
+            <h2>Exercise</h2>
+            <p>Find the best exercises for your fitness goals.</p>
+            
+            <!-- ฟังก์ชันการวัดค่าหัวใจ -->
+            <div class="heart-rate">
+                <h3>วัดค่าหัวใจ</h3>
+                <input type="number" id="heart-rate-input" placeholder="กรอกจำนวนครั้งต่อนาที">
+                <button onclick="measureHeartRate()">วัดค่า</button>
+                <p id="heart-rate-result"></p>
+            </div>
+
+            <!-- ฟังก์ชันการออกกำลังกาย -->
+            <div class="exercise-tracker">
+                <h3>การออกกำลังกาย</h3>
+                <input type="number" id="exercise-time" placeholder="กรอกระยะเวลา (นาที)">
+                <button onclick="trackExercise()">ติดตาม</button>
+                <p id="exercise-result"></p>
+            </div>
+
+            <!-- ฟังก์ชันการวัดจำนวนก้าวเดิน -->
+            <div class="step-counter">
+                <h3>การวัดจำนวนก้าวเดิน</h3>
+                <input type="number" id="step-count" placeholder="กรอกจำนวนก้าว">
+                <button onclick="countSteps()">คำนวณ</button>
+                <p id="step-result"></p>
+            </div>
+
+            <!-- ฟังก์ชันการวัดคามเคลื่อนไหว -->
+            <div class="activity-measurement">
+                <h3>การวัดความเคลื่อนไหว</h3>
+                <input type="number" id="activity-level" placeholder="กรอกระดับกิจกรรม">
+                <button onclick="measureActivity()">คำนวณ</button>
+                <p id="activity-result"></p>
+            </div>
+
+            <!-- ฟังก์ชันการแนะนำท่าออกกำลังกาย -->
+            <div class="exercise-recommendations">
+                <h3>การแนะนำท่าออกกำลังกาย</h3>
+                <p id="exercise-recommendation-result"></p>
+                <button onclick="recommendExercise()">แนะนำท่า</button>
+            </div>
+        </section>
+
+        <!-- Gift Voucher Section -->
+        <section id="gift-voucher">
+            <h2>Gift Voucher</h2>
+            <p>Redeem exciting gift vouchers and offers.</p>
+            
+            <!-- ฟังก์ชันการสมัครพรีเมี่ยม -->
+            <div class="premium-subscription">
+                <h3>สมัครพรีเมี่ยม</h3>
+                <p>เข้าร่วมสมาชิกพรีเมี่ยมเพื่อรับสิทธิพิเศษ</p>
+                <button onclick="subscribePremium()">สมัครสมาชิก</button>
+                <p id="subscription-result"></p>
+            </div>
+
+            <!-- ฟังก์ชันคูปองส่วนลดเมื่อไปฟิตเนสร้านที่ร่วมรายการ -->
+            <div class="discount-coupons">
+                <h3>คูปองส่วนลด</h3>
+                <p>รับส่วนลดพิเศษเมื่อไปฟิตเนสร้านที่ร่วมรายการ</p>
+                <button onclick="redeemCoupon()">รับคูปอง</button>
+                <p id="coupon-result"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 EatWall. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
